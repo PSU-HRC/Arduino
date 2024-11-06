@@ -23,13 +23,24 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  if (Serial.available()) {
+  if (Serial.available() > 0) {
     data = Serial.readStringUntil('\n');
-    processHandData(data);
+    int angle = data.toInt();
+    rPinky.write(angle);
+    Serial.print("Received: ");
+    Serial.println(data);
+    //processHandData(data);
   }
-}
+  else {
+    Serial.println("fail");
+  }
+   delay(100);
+  //rPinky.write(180);
 
+}
+/*
 void processHandData(String inputString) {
-  Serial.println("Received data: " + inputString);
+  //Serial.print(inputString);
   rPinky.write(inputString.toInt());
 }
+*/
