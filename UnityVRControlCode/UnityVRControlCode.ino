@@ -18,8 +18,8 @@ void setup() {
   Serial.begin(9600);
   Serial.println("Arduino ready");
 
-  rPinky.attach(48);
-  lThumb.attach(22);
+  rPinky.attach(22);
+  rIndex.attach(48);
 }
 
 void loop() {
