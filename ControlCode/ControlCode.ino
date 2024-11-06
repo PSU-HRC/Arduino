@@ -16,7 +16,7 @@ void setup() {
   middle.attach(7);
   index.attach(6);
   //thumb.attach(5);
-  test.attach(22);
+  test.attach(48);
 }
 
 void loop() {
@@ -26,5 +26,5 @@ void loop() {
     index.write(pos);       // tell servo to go to position in variable 'pos'
     thumb.write(pos);  
     //wait(15);                 // waits 15ms for the servo to reach the position
-    test.write(180);
+    test.write(0);
 }
