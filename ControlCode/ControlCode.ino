@@ -11,12 +11,12 @@ Servo test;
 int pos = 100;    // variable to store the servo position
 
 void setup() {
-  pinky.attach(9);  // attaches the servo on pin 9 to the servo object
-  ring.attach(8);
-  middle.attach(7);
-  index.attach(6);
+  //pinky.attach(9);  // attaches the servo on pin 9 to the servo object
+  //ring.attach(8);
+  //middle.attach(7);
+  //index.attach(6);
   //thumb.attach(5);
-  test.attach(22);
+  test.attach(9);
 }
 
 void loop() {
@@ -25,6 +25,6 @@ void loop() {
     middle.write(pos);  
     index.write(pos);       // tell servo to go to position in variable 'pos'
     thumb.write(pos);  
-    //wait(15);                 // waits 15ms for the servo to reach the position
+    delay(15);                 // waits 15ms for the servo to reach the position
     test.write(0);
 }

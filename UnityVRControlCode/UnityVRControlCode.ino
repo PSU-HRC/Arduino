@@ -1,4 +1,5 @@
 #include <Servo.h>
+
 Servo rPinky;  // create Servo object to control a servo
 Servo rRing;
 Servo rMiddle;
@@ -12,40 +13,50 @@ Servo lIndex;
 Servo lThumb;
 
 String data = "";
- 
+
 void setup() {
-  // put your setup code here, to run once:
+  // Initialize serial communication and attach servos
   Serial.begin(9600);
   Serial.println("Arduino ready");
 
-  rPinky.attach(22);
-  rIndex.attach(48);
+  rThumb.attach(3);
+  rIndex.attach(4);
+  rMiddle.attach(5);
+  rRing.attach(6);
+  rPinky.attach(7);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  if (Serial.available() > 0) {    data = Serial.readStringUntil('\n');
-    int angle = data.toInt();
-    rPinky.write(angle);
+  // Check if there is serial data available
+  if (Serial.available() > 0) {    
+    data = Serial.readStringUntil('\n'); 
+    int angles[5];                       
+    int index = 0;                       
 
-    /*if(angle <= 180 && angle >= 0) {
-      lThumb.write(180);
-    }*/
-    Serial.print("Received: ");
-    Serial.println(data);
+    int startIndex = 0;
+    int endIndex = data.indexOf(' ');
     
-    //processHandData(data);
-  }
-  else {
-    Serial.println("fail");
-  }
-   delay(100);
-  //rPinky.write(180);
+    while (endIndex != -1 && index < 5) {
+      angles[index++] = data.substring(startIndex, endIndex).toInt();
+      startIndex = endIndex + 1;
+      endIndex = data.indexOf(' ', startIndex);
+    }
+    if (index < 5) {
+      angles[index] = data.substring(startIndex).toInt();
+    }
 
+    rThumb.write(angles[0]);
+    rIndex.write(angles[1]);
+    rMiddle.write(angles[2]);
+    rRing.write(angles[3]);
+    rPinky.write(angles[4]);
+
+    Serial.print("Received angles: ");
+    Serial.println(data); 
+
+  } else {
+    Serial.println("fail"); 
+  }
+  
+  delay(100);
 }
-/*
-void processHandData(String inputString) {
-  //Serial.print(inputString);
-  rPinky.write(inputString.toInt());
-}
-*/
