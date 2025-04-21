@@ -1,30 +1,30 @@
 #include <Servo.h>
 
-Servo r_pinky;
-Servo r_ring;
-Servo r_middle;
-Servo r_index;
-Servo r_thumb;
+Servo lThumb; // Right hand servos
+Servo lIndex;
+Servo lMiddle;
+Servo lRing;
+Servo lPinky; 
 
-Servo l_pinky;
-Servo l_ring;
-Servo l_middle;
-Servo l_index;
-Servo l_thumb;
+Servo lThumb; // Left hand servos
+Servo lIndex;
+Servo lMiddle;
+Servo lRing;
+Servo lPinky; 
 
 void setup() {
   Serial.begin(9600); // Start serial communication
-  r_pinky.attach(6);    //min 25  max 130
-  r_ring.attach(5);     //min 25  max 130
-  r_middle.attach(4);   //min 25  max 130
-  r_index.attach(3);    //min 25  max 130
   r_thumb.attach(2);    //min 130 max 40
+  r_index.attach(3);    //min 25  max 130
+  r_middle.attach(4);   //min 25  max 130
+  r_ring.attach(5);     //min 25  max 130
+  r_pinky.attach(6);    //min 25  max 130
 
-  l_pinky.attach(12);   //min 180 max 50
-  l_ring.attach(11);    //min 180 max 50
-  l_middle.attach(10);  //min 180 max 50
-  l_index.attach(9);    //min 180 max 50
   l_thumb.attach(8);    //min 45  max 120
+  l_index.attach(9);    //min 180 max 50
+  l_middle.attach(10);  //min 180 max 50
+  l_ring.attach(11);    //min 180 max 50
+  l_pinky.attach(12);   //min 180 max 50
 
   Serial.println("Enter 10 angles (right thumb to pinky and left thumb to pinky) separated by spaces, e.g., '45 90 120 60 30...'");
 }

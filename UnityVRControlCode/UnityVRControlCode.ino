@@ -1,16 +1,16 @@
 #include <Servo.h>
 
-Servo rPinky;  // Right hand servos
-Servo rRing;
-Servo rMiddle;
+Servo rThumb; // Right hand servos
 Servo rIndex;
-Servo rThumb;
+Servo rMiddle;
+Servo rRing;
+Servo rPinky; 
 
-Servo lPinky;  // Left hand servos
-Servo lRing;
-Servo lMiddle;
+Servo lThumb; // Left hand servos
 Servo lIndex;
-Servo lThumb;
+Servo lMiddle;
+Servo lRing;
+Servo lPinky;  
 
 String data = "";
 
@@ -19,18 +19,18 @@ void setup() {
   Serial.println("Arduino ready");
 
   // Right hand servos
-  rThumb.attach(2);
-  rIndex.attach(3);
-  rMiddle.attach(4);
-  rRing.attach(5);
-  rPinky.attach(6);
-  
-  // Left hand servos (assign to different pins)
-  lThumb.attach(8);
-  lIndex.attach(9);
-  lMiddle.attach(10);
-  lRing.attach(11);
-  lPinky.attach(12);
+  r_thumb.attach(2);    //min 130 max 40
+  r_index.attach(3);    //min 25  max 130
+  r_middle.attach(4);   //min 25  max 130
+  r_ring.attach(5);     //min 25  max 130
+  r_pinky.attach(6);    //min 25  max 130
+
+  // Left hand servos
+  l_thumb.attach(8);    //min 45  max 120
+  l_index.attach(9);    //min 180 max 50
+  l_middle.attach(10);  //min 180 max 50
+  l_ring.attach(11);    //min 180 max 50
+  l_pinky.attach(12);   //min 180 max 50
 }
 
 void loop() {
