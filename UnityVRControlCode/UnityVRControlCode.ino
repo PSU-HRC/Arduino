@@ -19,18 +19,18 @@ void setup() {
   Serial.println("Arduino ready");
 
   // Right hand servos
-  r_thumb.attach(2);    //min 130 max 40
-  r_index.attach(3);    //min 25  max 130
-  r_middle.attach(4);   //min 25  max 130
-  r_ring.attach(5);     //min 25  max 130
-  r_pinky.attach(6);    //min 25  max 130
+  rThumb.attach(2);    //min 130 max 40
+  rIndex.attach(3);    //min 25  max 130
+  rMiddle.attach(4);   //min 25  max 130
+  rRing.attach(5);     //min 25  max 130
+  rPinky.attach(6);    //min 25  max 130
 
   // Left hand servos
-  l_thumb.attach(8);    //min 45  max 120
-  l_index.attach(9);    //min 180 max 50
-  l_middle.attach(10);  //min 180 max 50
-  l_ring.attach(11);    //min 180 max 50
-  l_pinky.attach(12);   //min 180 max 50
+  lThumb.attach(8);    //min 45  max 120
+  lIndex.attach(9);    //min 180 max 50
+  lMiddle.attach(10);  //min 180 max 50
+  lRing.attach(11);    //min 180 max 50
+  lPinky.attach(12);   //min 180 max 50
 }
 
 void loop() {
