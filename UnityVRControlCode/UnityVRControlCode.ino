@@ -86,7 +86,7 @@ void processHandData(String angleData, bool isLeftHand) {
     angles[2] = map(constrain(angles[2], 10, 130), 10, 130, 50, 180);
     angles[3] = map(constrain(angles[3], 10, 150), 10, 150, 50, 180);
     angles[4] = map(constrain(angles[4], 20, 120), 20, 120, 50, 180);
-    angles[5] = map(constrain(angles[5], 20, 75), 20, 75, 0, 180); //Editing needed
+    angles[5] = map(constrain(angles[5], 0, 80), 0, 80, 0, 180); //Editing needed
   } else {
       //Right: Thumb --> Pinky
     angles[0] = map(constrain(angles[0], 30, 230), 30, 230, 40, 130);
@@ -95,7 +95,7 @@ void processHandData(String angleData, bool isLeftHand) {
     angles[3] = map(constrain(angles[3], 10, 150), 10, 150, 130, 25);
     angles[4] = map(constrain(angles[4], 20, 120), 20, 120, 130, 25);
     // angles[5] = map(constrain(angles[5], 20, 120), 20, 120, 130, 25);
-    angles[5] = map(constrain(angles[5], 20, 75), 20, 75, 0, 180); //Editing needed
+    angles[5] = map(constrain(angles[5], 0, 80), 0, 80, 0, 180); //Editing needed
   }
 
 
